@@ -19,3 +19,11 @@ then
   alias skip='echo; echo; seq 1 $(tput cols) | sort -R | spark | lolcat -a; echo; echo'
   alias clc='clear; skip'
 fi
+
+# TEMPERATURE MONITORING - via iStats and watch (macOS)
+#   `gem install iStats`
+#   `brew install watch`
+if $(watch &> /dev/null) && $(istats &> /dev/null)
+then
+  alias beta='watch -n 2 --color istats'
+fi
